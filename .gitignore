@@ -8,4 +8,5 @@ coverage/
 logs
 run
 *.iml
+.vscode
 

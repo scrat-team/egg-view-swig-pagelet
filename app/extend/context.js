@@ -1,5 +1,5 @@
 'use strict';
-const PAGELET_SWIG_VIEW = Symbol('app#PageletSwigView');
+const PAGELET_SWIG_VIEW = Symbol('context#PageletSwigView');
 const View = require('../../lib/view');
 
 module.exports = {
