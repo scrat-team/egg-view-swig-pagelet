@@ -10,9 +10,9 @@ module.exports = {
    * swig pagelet engine
    */
   get swigPagelet() {
-    if (!this[ PAGELET_SWIG ]) {
-      this[ PAGELET_SWIG ] = engine(this);
+    if (!this[PAGELET_SWIG]) {
+      this[PAGELET_SWIG] = engine(this);
     }
-    return this[ PAGELET_SWIG ];
+    return this[PAGELET_SWIG];
   },
 };
