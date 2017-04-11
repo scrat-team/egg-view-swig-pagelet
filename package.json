@@ -1,0 +1,66 @@
+{
+  "name": "egg-view-pagelet-swig",
+  "version": "0.1.0",
+  "description": "基于egg-view-swig插件扩展, 支持scrat pagelet 模式",
+  "eggPlugin": {
+    "name": "swigPagelet",
+    "dep": [
+      "swig",
+      "security"
+    ]
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin",
+    "egg-view",
+    "pagelet",
+    "pagelet",
+    "swig"
+  ],
+  "dependencies": {
+    "egg-view-swig": "^0.1.0",
+    "scrat-swig": "^0.9.0"
+  },
+  "devDependencies": {
+    "autod": "^2.8.0",
+    "autod-egg": "^1.0.0",
+    "cheerio": "^0.22.0",
+    "egg": "^1.0.0",
+    "egg-bin": "^3.2.1",
+    "egg-mock": "^3.2.0",
+    "eslint": "^3.19.0",
+    "eslint-config-egg": "^3.2.0",
+    "expect.js": "^0.3.1",
+    "supertest": "^2.0.1",
+    "thunk-mocha": "^1.0.8",
+    "webstorm-disable-index": "^1.0.11"
+  },
+  "files": [
+    "app",
+    "lib",
+    "config",
+    "app.js",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "ci": {
+    "version": "6, 7"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "homepage": "https://github.com/scrat-team/egg-view-pagelet-swig",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:scrat-team/egg-view-pagelet-swig.git"
+  }
+}

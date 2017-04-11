@@ -1,0 +1,180 @@
+@charset "UTF-8";
+.p-list .card {
+  background-image: url(/public/c/widget/shared-style/images/border-b.png);
+  -webkit-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-repeat: repeat-x;
+  background-position: 0 bottom;
+}
+
+/*
+* @description: 安卓客户端V5
+* @author: guanwq
+*/
+body, html, div, ul, ol, li, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+body {
+  background-color: #fff;
+  line-height: 1;
+  font-size: 14px;
+  color: #333;
+  font-family: 'Droid Sans Fallback';
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+img {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+input, a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus, input:focus {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+}
+
+.em {
+  color: #f67b29;
+}
+
+.tips-full {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  background-color: #FFF;
+  /*height: 100%;*/
+  padding-top: 50%;
+}
+
+.tips-full .tips-info {
+  padding-bottom: 50px;
+}
+
+.tips-full .tips-info .icon-nothing-full {
+  width: 100px;
+  height: 100px;
+  background-image: url(/public/c/widget/shared-style/images/pop_nothing.png);
+  background-size: 100px auto;
+  margin: 0 auto;
+}
+
+.tips-full .tips-info .icon-error-full {
+  width: 100px;
+  height: 100px;
+  background-image: url(/public/c/widget/shared-style/images/blank_pic_error.png);
+  background-size: 100px auto;
+  margin: 0 auto;
+}
+
+.tips-full .tips-info .info-text {
+  display: block;
+  padding-top: 8px;
+  color: #999;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/**
+* ::::::::::::::list::::::::::::::
+*/
+.p-list {
+  /*height: 100%;*/
+  background: #F4F2F0;
+}
+
+.p-list .card {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.p-list .item-sign {
+  display: -webkit-box;
+  height: 36px;
+  padding-top: 5px;
+}
+
+.p-list .info {
+  -webkit-box-flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #999;
+  line-height: 30px;
+}
+
+.p-list .info .sort {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.p-list .close {
+  display: block;
+  width: 50px;
+  height: 30px;
+  background-image: url(/public/c/widget/shared-style/images/item_close.png);
+  background-size: 8px 8px;
+  -webkit-background-size: 8px 8px;
+  background-position: 24px center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 5;
+}
+
+.p-list .close .close-tips {
+  display: none;
+  width: 48px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.75);
+  -weibkit-border-radius: 3px;
+  border-radius: 3px;
+  position: absolute;
+  left: -25px;
+  top: 2px;
+  color: #FFF;
+  font-size: 10px;
+  text-align: center;
+  line-height: 24px;
+  outline: none;
+}
+
+.p-list .close .close-tips::after {
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid #404040;
+  position: absolute;
+  right: -3px;
+  top: 9px;
+}
