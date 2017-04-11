@@ -42,3 +42,15 @@ exports.home = function* (ctx) {
   yield ctx.renderPage('home.tpl', { list });
 };
 ```
+
+## Configuration
+
+see [config/config.default.js](config/config.default.js) for more detail.
+
+## Questions & Suggestions
+
+Please open an issue [here](https://github.com/scrat-team/egg-view-pagelet-swig/issues).
+
+## License
+
+[MIT](LICENSE)
