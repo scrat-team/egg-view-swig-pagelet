@@ -30,5 +30,4 @@ module.exports = app => {
   for (const name of Object.keys(filters)) {
     app.swig.setFilter(name, filters[name]);
   }
-  return app.swig;
 };
