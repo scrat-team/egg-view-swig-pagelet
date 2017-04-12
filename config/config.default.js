@@ -12,10 +12,14 @@ module.exports = appInfo => {
     },
   };
 
+  /**
+   * swigPagelet config
+   * @member Config#swig
+   * @property {String} [layout=layout/layout.tpl] layout template config for view base dir
+   * @property {String} [manifest=${baseDir}/config/manifest.json] scrat resource manifest path
+   */
   config.swigPagelet = {
-    // default layout template config for view base dir
     layout: 'layout/layout.tpl',
-    // default scrat resource manifest path
     manifest: path.join(appInfo.baseDir, 'config/manifest.json'),
   };
 
