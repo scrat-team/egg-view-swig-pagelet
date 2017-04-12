@@ -19,8 +19,10 @@ describe('test/view/pagelet.test.js', () => {
   it('should render', done => {
     request(app.callback())
       .get('/render')
-      .expect(200)
-      .expect('Hi,EGG swig render-----egg view plugin for swig', done);
+      .expect('Content-Type', /text\/html/)
+      .expect(/hi,welcome egg world/)
+      .expect(/<div class="name">ID:/)
+      .expect(200, done);
   });
 
   it('should renderString', done => {
@@ -31,18 +33,9 @@ describe('test/view/pagelet.test.js', () => {
       .expect(200, done);
   });
 
-  it('should renderPage', done => {
-    request(app.callback())
-      .get('/renderPage')
-      .expect('Content-Type', /text\/html/)
-      .expect(/hi,welcome egg world/)
-      .expect(/<div class="name">ID:/)
-      .expect(200, done);
-  });
-
-  it('should request renderPage pagelet json', function* () {
+  it('should request render pagelet json', function* () {
     const result = yield request(app.callback())
-      .get('/renderPage?_pagelets=layout')
+      .get('/render?_pagelets=layout')
       .expect('Content-Type', /application\/json/)
       .expect(200);
 

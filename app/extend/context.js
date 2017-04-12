@@ -20,7 +20,7 @@ module.exports = {
    * @param {Object} [locals] template data
    * @param {Object} options custom params
    */
-  * renderPage(name, locals, options) {
+  * render(name, locals, options) {
     this.body = yield this.swigPageletView.renderPage(name, locals, options);
   },
 };

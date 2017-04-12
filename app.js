@@ -4,10 +4,9 @@ const scratSwig = require('scrat-swig');
 
 module.exports = app => {
   const swigPagelet = app.config.swigPagelet;
-  scratSwig.configure({
-    swig: app.swig,
-    map: swigPagelet.manifest,
-  });
+  const config = Object.assign({ swig: app.swig, map: swigPagelet.manifest }, swigPagelet);
+  scratSwig.configure(config);
+
   // monkey patch `escape` with `app.helper.escape` provided by `egg-security` for better performance
   const escape = app.Helper.prototype.escape;
   if (escape) {
@@ -16,9 +15,11 @@ module.exports = app => {
     app.swig.setFilter('e', escape);
   }
 
-  const filters = app.loader.loadFile(path.join(app.baseDir, 'app/extend/filter.js')) || {};
-  for (const name of Object.keys(filters)) {
-    app.swig.setFilter(name, filters[name]);
+  for (const unit of app.loader.getLoadUnits()) {
+    const filterPath = path.join(unit.path, 'app/extend/filter.js');
+    const filters = app.loader.loadFile(filterPath) || {};
+    for (const name of Object.keys(filters)) {
+      app.swig.setFilter(name, filters[name]);
+    }
   }
-
 };

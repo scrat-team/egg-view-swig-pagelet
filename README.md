@@ -1,4 +1,4 @@
-# egg-view-pagelet-swig
+# egg-view-swig-pagelet
 
 Support the view rendering implementation of the scrat pagelet. Depends on the [egg-view-swig](https://github.com/eggjs/egg-view-swig ) template view engine.
 
@@ -11,27 +11,26 @@ DOCS: http://node-swig.github.io/swig-templates
 ## Install
 
 ```bash
-$ npm i egg-view-pagelet-swig --save
+$ npm i egg-view-swig-pagelet --save
 ```
 
 ## Usage
 
 ```js
-// $appname/config/plugin.js
+// {app_root}/config/plugin.js
 exports.swigPagelet = {
   enable: true,
-  package: 'egg-view-pagelet-swig',
+  package: 'egg-view-swig-pagelet',
 };
 ```
 
-Set mapping in config
-
 ```js
+// {app_root}/config/config.default.js
 exports.swigPagelet = {
-  // layout template for view base dir
-  layout: 'layout/layout.tpl',
-  // scrat resource manifest
-  manifest: path.join(app.baseDir, 'config/manifest.json')
+  // default layout template config for view base dir
+  // layout: 'layout/layout.tpl',
+  // default scrat resource manifest path
+  // manifest: path.join(app.baseDir, 'config/manifest.json')
 };
 ```
 
@@ -49,7 +48,7 @@ see [config/config.default.js](config/config.default.js) for more detail.
 
 ## Questions & Suggestions
 
-Please open an issue [here](https://github.com/scrat-team/egg-view-pagelet-swig/issues).
+Please open an issue [here](https://github.com/scrat-team/egg-view-swig-pagelet/issues).
 
 ## License
 

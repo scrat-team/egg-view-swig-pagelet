@@ -1,10 +1,10 @@
 {
-  "name": "egg-view-pagelet-swig",
+  "name": "egg-view-swig-pagelet",
   "version": "0.1.0",
   "description": "基于egg-view-swig插件扩展, 支持scrat pagelet 模式",
   "eggPlugin": {
     "name": "swigPagelet",
-    "dep": [
+    "dependencies": [
       "swig",
       "security"
     ]
@@ -15,11 +15,9 @@
     "egg-plugin",
     "egg-view",
     "pagelet",
-    "pagelet",
     "swig"
   ],
   "dependencies": {
-    "egg-view-swig": "^0.1.0",
     "scrat-swig": "^0.10.0"
   },
   "devDependencies": {
@@ -29,6 +27,7 @@
     "egg": "^1.0.0",
     "egg-bin": "^3.2.1",
     "egg-mock": "^3.2.0",
+    "egg-view-swig": "^0.1.0",
     "eslint": "^3.19.0",
     "eslint-config-egg": "^3.2.0",
     "expect.js": "^0.3.1",
@@ -57,10 +56,10 @@
     "ci": "npm run lint && npm run cov",
     "autod": "autod"
   },
-  "homepage": "https://github.com/scrat-team/egg-view-pagelet-swig",
+  "homepage": "https://github.com/scrat-team/egg-view-swig-pagelet",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:scrat-team/egg-view-pagelet-swig.git"
+    "url": "git@github.com:scrat-team/egg-view-swig-pagelet.git"
   }
 }

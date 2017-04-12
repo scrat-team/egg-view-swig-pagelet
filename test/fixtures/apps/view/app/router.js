@@ -4,5 +4,4 @@
 module.exports = app => {
   app.get('/render', app.controller.home.render);
   app.get('/renderString', app.controller.home.renderString);
-  app.get('/renderPage', app.controller.home.renderPage);
 };
