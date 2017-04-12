@@ -1,0 +1,154 @@
+@charset "UTF-8";
+.card-news .pic {
+  background-color: #FAF5F2;
+  background-image: url(/public/c/widget/shared-style/images/default_pic.png);
+  -webkit-background-size: 57px 57px;
+  background-size: 57px 57px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/*
+* @description: 安卓客户端V5
+* @author: guanwq
+*/
+body, html, div, ul, ol, li, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+body {
+  background-color: #fff;
+  line-height: 1;
+  font-size: 14px;
+  color: #333;
+  font-family: 'Droid Sans Fallback';
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+img {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+input, a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus, input:focus {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+}
+
+.em {
+  color: #f67b29;
+}
+
+.tips-full {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  background-color: #FFF;
+  /*height: 100%;*/
+  padding-top: 50%;
+}
+
+.tips-full .tips-info {
+  padding-bottom: 50px;
+}
+
+.tips-full .tips-info .icon-nothing-full {
+  width: 100px;
+  height: 100px;
+  background-image: url(/public/c/widget/shared-style/images/pop_nothing.png);
+  background-size: 100px auto;
+  margin: 0 auto;
+}
+
+.tips-full .tips-info .icon-error-full {
+  width: 100px;
+  height: 100px;
+  background-image: url(/public/c/widget/shared-style/images/blank_pic_error.png);
+  background-size: 100px auto;
+  margin: 0 auto;
+}
+
+.tips-full .tips-info .info-text {
+  display: block;
+  padding-top: 8px;
+  color: #999;
+  line-height: 1.3;
+  text-align: center;
+}
+
+img.laod-error {
+  display: none !important;
+}
+
+.card-news {
+  padding: 15px 0 5px 18px;
+}
+
+.card-news a {
+  display: -webkit-box;
+  position: relative;
+  z-index: 1;
+}
+
+.card-news .pic {
+  -webkit-box-flex: 2;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  border-right: 2px solid #FFF;
+  border-bottom: 10px solid #FFF;
+  min-height: 70px;
+}
+
+.card-news .pic img {
+  width: 100%;
+  height: 73px;
+  display: block;
+}
+
+.card-news .con {
+  width: 100%;
+  -webkit-box-flex: 1;
+  padding-left: 8px;
+  -webkit-box-sizing: border-box;
+}
+
+.card-news .name {
+  padding-right: 10px;
+  height: 50px;
+  margin: -4px 0;
+  font-size: 18px;
+  line-height: 25px;
+  max-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
