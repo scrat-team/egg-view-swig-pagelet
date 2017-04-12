@@ -38,7 +38,7 @@ Render in controller
 
 ```js
 exports.home = function* (ctx) {
-  yield ctx.renderPage('home.tpl', { list });
+  yield ctx.render('home.tpl', { list });
 };
 ```
 
