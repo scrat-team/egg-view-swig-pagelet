@@ -1,23 +1,13 @@
 'use strict';
 const path = require('path');
 const scratSwig = require('scrat-swig');
-const Resource = scratSwig.Resource;
 
 module.exports = app => {
-  const root = app.config.view.root[0];
   const swigPagelet = app.config.swigPagelet;
-
-  scratSwig.tagNames.forEach(tag => {
-    const t = require('scrat-swig/lib/tags/' + tag);
-    app.swig.setTag(tag, t.parse, t.compile, t.ends, t.blockLevel || false);
+  scratSwig.configure({
+    swig: app.swig,
+    map: swigPagelet.manifest,
   });
-
-  Resource.setRoot(root);
-
-  app.swig.viewRoot = root;
-  app.swig.setExtension('Resource', Resource);
-  app.swig.setExtension('_map', Resource.loadOptions(swigPagelet.manifest));
-
   // monkey patch `escape` with `app.helper.escape` provided by `egg-security` for better performance
   const escape = app.Helper.prototype.escape;
   if (escape) {
@@ -30,4 +20,5 @@ module.exports = app => {
   for (const name of Object.keys(filters)) {
     app.swig.setFilter(name, filters[name]);
   }
+
 };
