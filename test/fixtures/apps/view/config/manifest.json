@@ -158,8 +158,8 @@
             "uri": "/public/c/widget/shared-style/shared-style.css",
             "type": "css"
         },
-        "view/detail.tpl": {
-            "uri": "detail.tpl",
+        "view/page/detail.tpl": {
+            "uri": "page/detail.tpl",
             "type": "tpl",
             "deps": [
                 "page/detail"
@@ -204,8 +204,8 @@
             "uri": "/public/v/lib/pagelet/pagelet.js",
             "type": "js"
         },
-        "view/list.tpl": {
-            "uri": "list.tpl",
+        "view/page/list.tpl": {
+            "uri": "page/list.tpl",
             "type": "tpl",
             "deps": [
                 "page/list"
@@ -213,10 +213,6 @@
         },
         "view/page/test.tpl": {
             "uri": "page/test.tpl",
-            "type": "tpl"
-        },
-        "view/test.tpl": {
-            "uri": "test.tpl",
             "type": "tpl"
         }
     },
