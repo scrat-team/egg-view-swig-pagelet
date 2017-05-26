@@ -4,10 +4,7 @@ const scratSwig = require('scrat-swig');
 
 module.exports = app => {
   const swigPagelet = app.config.swigPagelet;
-  const config = Object.assign(
-    { swig: app.swig, map: swigPagelet.manifest },
-    swigPagelet
-  );
+  const config = Object.assign({ swig: app.swig, map: swigPagelet.manifest }, swigPagelet);
   scratSwig.configure(config);
 
   // monkey patch `escape` with `app.helper.escape` provided by `egg-security` for better performance
