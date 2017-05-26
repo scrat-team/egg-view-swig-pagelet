@@ -1,18 +1,8 @@
 'use strict';
-const PAGELET_SWIG_VIEW = Symbol('context#PageletSwigView');
-const View = require('../../lib/view');
+
+const path = require('path');
 
 module.exports = {
-  /**
-   * swig pagelet engine
-   */
-  get swigPageletView() {
-    if (!this[PAGELET_SWIG_VIEW]) {
-      this[PAGELET_SWIG_VIEW] = new View(this);
-    }
-    return this[PAGELET_SWIG_VIEW];
-  },
-
   /**
    * render layout file
    * @method Context#renderPage
@@ -20,7 +10,34 @@ module.exports = {
    * @param {Object} [locals] template data
    * @param {Object} options custom params
    */
-  * render(name, locals, options) {
-    this.body = yield this.swigPageletView.renderPage(name, locals, options);
+  * render(name, locals, options = {}) {
+    const config = this.app.config || {};
+
+    const pagelets = this.get('X-Pagelets') || this.query._pagelets;
+    if (pagelets) {
+      this.type = 'json';
+      locals._pagelets = pagelets;
+    } else {
+      this.type = 'html';
+    }
+
+    locals = Object.assign({}, {
+      ctx: this,
+      request: this.request,
+      helper: this.helper,
+    }, this.locals, locals);
+
+    const layout = locals.layout || options.layout || config.swigPagelet.layout;
+    const normalName = name.replace(new RegExp(`${config.view.defaultExtension}$`, ''), '');
+
+    const fakePath = path.join(
+      config.view.root[0],
+      normalName.replace(/\//g, '_') + config.view.defaultExtension
+    );
+
+    const source = `{% extends '${layout}' %}{% block content %}{% require $id='page/${normalName}' %}{% endblock %}`;
+    const tplFn = this.app.swig.compile(source, { filename: fakePath });
+
+    this.body = tplFn(locals);
   },
 };

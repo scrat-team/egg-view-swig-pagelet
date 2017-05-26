@@ -1,8 +1,7 @@
 'use strict';
 
 const mm = require('egg-mock');
-const expect = require('expect.js');
-const request = require('supertest');
+const assert = require('assert');
 
 describe('test/view/pagelet.test.js', () => {
   let app;
@@ -17,7 +16,7 @@ describe('test/view/pagelet.test.js', () => {
   afterEach(mm.restore);
 
   it('should render', done => {
-    request(app.callback())
+    app.httpRequest()
       .get('/render')
       .expect('Content-Type', /text\/html/)
       .expect(/hi,welcome egg world/)
@@ -26,7 +25,7 @@ describe('test/view/pagelet.test.js', () => {
   });
 
   it('should renderString', done => {
-    request(app.callback())
+    app.httpRequest()
       .get('/renderString')
       .expect('Content-Type', /text\/html/)
       .expect(/<div>ID:100,Name:sky<\/div>/)
@@ -34,16 +33,29 @@ describe('test/view/pagelet.test.js', () => {
   });
 
   it('should request render pagelet json', function* () {
-    const result = yield request(app.callback())
+    const result = yield app
+      .httpRequest()
       .get('/render?_pagelets=layout')
       .expect('Content-Type', /application\/json/)
       .expect(200);
 
     const body = result.body;
-    expect(body).to.have.keys('html', 'css', 'js', 'script', 'data', 'title', 'hash');
-    expect(body.html.layout).to.match(/<div class="name">ID:/);
-    expect(body.html.layout).to.match(/helper:###test/);
-    expect(body.css).to.eql([ '/public/c/widget/card/card.css', '/public/c/widget/list/list.css' ]);
-    expect(body.js).to.eql([ '/public/c/widget/boot/boot.js', '/public/c/widget/list/list.js' ]);
+    const keys = Object.keys(body);
+
+    assert(
+      [ 'html', 'css', 'js', 'script', 'data', 'title', 'hash' ].every(key =>
+        keys.includes(key)
+      )
+    );
+    assert(/<div class="name">ID:/.test(body.html.layout));
+    assert(/helper:###test/.test(body.html.layout));
+    assert.deepEqual(body.css, [
+      '/public/c/widget/card/card.css',
+      '/public/c/widget/list/list.css',
+    ]);
+    assert.deepEqual(body.js, [
+      '/public/c/widget/boot/boot.js',
+      '/public/c/widget/list/list.js',
+    ]);
   });
 });

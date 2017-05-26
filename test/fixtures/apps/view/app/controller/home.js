@@ -10,5 +10,9 @@ exports.render = function* (ctx) {
 };
 
 exports.renderString = function* (ctx) {
-  ctx.body = yield ctx.renderString('<div>ID:{{user.id}},Name:{{user.name}}</div>', { user: { id: 100, name: 'sky' } }, { viewEngine: 'swig' });
+  ctx.body = yield ctx.renderString(
+    '<div>ID:{{user.id}},Name:{{user.name}}</div>',
+    { user: { id: 100, name: 'sky' } },
+    { viewEngine: 'swig' }
+  );
 };
