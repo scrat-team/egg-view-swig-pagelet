@@ -16,8 +16,7 @@ describe('test/view/pagelet.test.js', () => {
   afterEach(mm.restore);
 
   it('should render', done => {
-    app
-      .httpRequest()
+    app.httpRequest()
       .get('/render')
       .expect('Content-Type', /text\/html/)
       .expect(/hi,welcome egg world/)
@@ -26,8 +25,7 @@ describe('test/view/pagelet.test.js', () => {
   });
 
   it('should renderString', done => {
-    app
-      .httpRequest()
+    app.httpRequest()
       .get('/renderString')
       .expect('Content-Type', /text\/html/)
       .expect(/<div>ID:100,Name:sky<\/div>/)

@@ -21,22 +21,14 @@ module.exports = {
       this.type = 'html';
     }
 
-    locals = Object.assign(
-      {},
-      {
-        ctx: this,
-        request: this.request,
-        helper: this.helper,
-      },
-      this.locals,
-      locals
-    );
+    locals = Object.assign({}, {
+      ctx: this,
+      request: this.request,
+      helper: this.helper,
+    }, this.locals, locals);
 
     const layout = locals.layout || options.layout || config.swigPagelet.layout;
-    const normalName = name.replace(
-      new RegExp(`${config.view.defaultExtension}$`, ''),
-      ''
-    );
+    const normalName = name.replace(new RegExp(`${config.view.defaultExtension}$`, ''), '');
 
     const fakePath = path.join(
       config.view.root[0],
