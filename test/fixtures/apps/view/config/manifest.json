@@ -1,11 +1,11 @@
 {
     "comboPattern": "/co??%s",
     "res": {
-        "components/framework/zepto/zepto.js": {
+        "component/framework/zepto/zepto.js": {
             "uri": "/public/c/framework/zepto/zepto.js",
             "type": "js"
         },
-        "components/page/detail/detail.tpl": {
+        "component/page/detail/detail.tpl": {
             "uri": "c/page/detail/detail.tpl",
             "type": "tpl",
             "deps": [
@@ -13,148 +13,148 @@
                 "widget/detail"
             ]
         },
-        "components/page/list/list.tpl": {
+        "component/page/list/list.tpl": {
             "uri": "c/page/list/list.tpl",
             "type": "tpl",
             "deps": [
                 "widget/list"
             ]
         },
-        "components/widget/boot/boot.js": {
+        "component/widget/boot/boot.js": {
             "uri": "/public/c/widget/boot/boot.js",
             "type": "js"
         },
-        "components/widget/card/card.scss": {
+        "component/widget/card/card.scss": {
             "uri": "/public/c/widget/card/card.css",
             "type": "css"
         },
-        "components/widget/card/card.tpl": {
+        "component/widget/card/card.tpl": {
             "uri": "c/widget/card/card.tpl",
             "type": "tpl",
             "deps": [
-                "components/widget/card/card.scss"
+                "component/widget/card/card.scss"
             ]
         },
-        "components/widget/detail/detail.js": {
+        "component/widget/detail/detail.js": {
             "uri": "/public/c/widget/detail/detail.js",
             "type": "js",
             "deps": [
                 "widget/boot",
-                "components/widget/detail/detail.scss"
+                "component/widget/detail/detail.scss"
             ]
         },
-        "components/widget/detail/detail.scss": {
+        "component/widget/detail/detail.scss": {
             "uri": "/public/c/widget/detail/detail.css",
             "type": "css"
         },
-        "components/widget/detail/detail.tpl": {
+        "component/widget/detail/detail.tpl": {
             "uri": "c/widget/detail/detail.tpl",
             "type": "tpl",
             "deps": [
-                "components/widget/detail/detail.js",
-                "components/widget/detail/detail.scss"
+                "component/widget/detail/detail.js",
+                "component/widget/detail/detail.scss"
             ]
         },
-        "components/widget/header/header.css": {
+        "component/widget/header/header.css": {
             "uri": "/public/c/widget/header/header.css",
             "type": "css"
         },
-        "components/widget/header/header.js": {
+        "component/widget/header/header.js": {
             "uri": "/public/c/widget/header/header.js",
             "type": "js",
             "deps": [
-                "components/widget/header/header.css"
+                "component/widget/header/header.css"
             ]
         },
-        "components/widget/header/header.tpl": {
+        "component/widget/header/header.tpl": {
             "uri": "c/widget/header/header.tpl",
             "type": "tpl",
             "deps": [
-                "components/widget/header/header.css",
-                "components/widget/header/header.js"
+                "component/widget/header/header.css",
+                "component/widget/header/header.js"
             ]
         },
-        "components/widget/list/list.js": {
+        "component/widget/list/list.js": {
             "uri": "/public/c/widget/list/list.js",
             "type": "js",
             "deps": [
                 "widget/boot",
-                "components/widget/list/list.scss"
+                "component/widget/list/list.scss"
             ]
         },
-        "components/widget/list/list.scss": {
+        "component/widget/list/list.scss": {
             "uri": "/public/c/widget/list/list.css",
             "type": "css"
         },
-        "components/widget/list/list.tpl": {
+        "component/widget/list/list.tpl": {
             "uri": "c/widget/list/list.tpl",
             "type": "tpl",
             "deps": [
                 "widget/card",
-                "components/widget/list/list.js",
-                "components/widget/list/list.scss"
+                "component/widget/list/list.js",
+                "component/widget/list/list.scss"
             ]
         },
-        "components/widget/nav/nav.scss": {
+        "component/widget/nav/nav.scss": {
             "uri": "/public/c/widget/nav/nav.css",
             "type": "css"
         },
-        "components/widget/nav/nav.tpl": {
+        "component/widget/nav/nav.tpl": {
             "uri": "c/widget/nav/nav.tpl",
             "type": "tpl",
             "deps": [
-                "components/widget/nav/nav.scss"
+                "component/widget/nav/nav.scss"
             ]
         },
-        "components/widget/shared-style/images/bg_view.png": {
+        "component/widget/shared-style/images/bg_view.png": {
             "uri": "/public/c/widget/shared-style/images/bg_view.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/blank_pic_error.png": {
+        "component/widget/shared-style/images/blank_pic_error.png": {
             "uri": "/public/c/widget/shared-style/images/blank_pic_error.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/border-b.png": {
+        "component/widget/shared-style/images/border-b.png": {
             "uri": "/public/c/widget/shared-style/images/border-b.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/border-t.png": {
+        "component/widget/shared-style/images/border-t.png": {
             "uri": "/public/c/widget/shared-style/images/border-t.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/border_detail.png": {
+        "component/widget/shared-style/images/border_detail.png": {
             "uri": "/public/c/widget/shared-style/images/border_detail.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/default_pic.png": {
+        "component/widget/shared-style/images/default_pic.png": {
             "uri": "/public/c/widget/shared-style/images/default_pic.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/detail_line.png": {
+        "component/widget/shared-style/images/detail_line.png": {
             "uri": "/public/c/widget/shared-style/images/detail_line.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/icon_gif.png": {
+        "component/widget/shared-style/images/icon_gif.png": {
             "uri": "/public/c/widget/shared-style/images/icon_gif.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/item_close.png": {
+        "component/widget/shared-style/images/item_close.png": {
             "uri": "/public/c/widget/shared-style/images/item_close.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/newsdetail_icon.png": {
+        "component/widget/shared-style/images/newsdetail_icon.png": {
             "uri": "/public/c/widget/shared-style/images/newsdetail_icon.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/pop_nothing.png": {
+        "component/widget/shared-style/images/pop_nothing.png": {
             "uri": "/public/c/widget/shared-style/images/pop_nothing.png",
             "type": "png"
         },
-        "components/widget/shared-style/images/tips_close.png": {
+        "component/widget/shared-style/images/tips_close.png": {
             "uri": "/public/c/widget/shared-style/images/tips_close.png",
             "type": "png"
         },
-        "components/widget/shared-style/shared-style.scss": {
+        "component/widget/shared-style/shared-style.scss": {
             "uri": "/public/c/widget/shared-style/shared-style.css",
             "type": "css"
         },

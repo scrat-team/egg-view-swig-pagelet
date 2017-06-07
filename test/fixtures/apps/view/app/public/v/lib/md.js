@@ -6,7 +6,7 @@
   //defined cache
   var defined = {};
 
-  var PREFIX = 'components/';
+  var PREFIX = 'component/';
   var PREFIX_LENGHT = PREFIX.length;
 
   /**
@@ -47,7 +47,7 @@
       id = id + '/' + last + '.js';
     }
     if(id.substring(0, PREFIX_LENGHT) !== PREFIX){
-      id = 'components/' + id;
+      id = 'component/' + id;
     }
     if (modules.hasOwnProperty(id)) {    //if cached
       return modules[id];

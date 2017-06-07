@@ -23,5 +23,5 @@
 </div>
 
 {% script %}
-  require('components/widget/detail/detail.js');
+  require('component/widget/detail/detail.js');
 {% endscript %}

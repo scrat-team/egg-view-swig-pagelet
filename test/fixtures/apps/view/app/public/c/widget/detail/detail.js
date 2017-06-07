@@ -1,4 +1,4 @@
-define('components/widget/detail/detail.js', function(require, exports, module){require('widget/boot');
+define('component/widget/detail/detail.js', function(require, exports, module){require('widget/boot');
 
 function like(evt) {
   var $zan = $('.btn-zan');

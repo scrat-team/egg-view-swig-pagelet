@@ -12,9 +12,10 @@ module.exports = {
   devdep: [
     'autod',
     'autod-egg',
+    'egg',
     'egg-bin',
     'egg-mock',
-    'mocha',
+    'egg-view-swig',
     'eslint',
     'eslint-config-egg'
   ],
