@@ -15,5 +15,5 @@
 
 
 {% script %}
-  require('components/widget/list/list.js');
+  require('component/widget/list/list.js');
 {% endscript %}

@@ -1,4 +1,4 @@
-define('components/widget/list/list.js', function(require, exports, module){require('widget/boot');
+define('component/widget/list/list.js', function(require, exports, module){require('widget/boot');
 
 function showTips(evt) {
   var $dom = $(evt.target).children(".close-tips");
