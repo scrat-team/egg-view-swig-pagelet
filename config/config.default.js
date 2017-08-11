@@ -20,6 +20,7 @@ module.exports = appInfo => {
    */
   config.swigPagelet = {
     layout: 'layout/layout.tpl',
+    root: path.join(appInfo.baseDir, 'app'),
     manifest: path.join(appInfo.baseDir, 'config/manifest.json'),
   };
 
