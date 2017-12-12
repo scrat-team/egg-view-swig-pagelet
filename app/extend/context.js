@@ -37,7 +37,7 @@ module.exports = {
     {% require $id = 'page/[name]' %}
     {% endblock %}
     */
-    let useTpl = options.useLayoutTplString != undefined ? options.useLayoutTplString : config.swigPagelet.useLayoutTplString;
+    let useTpl = options.useLayoutTplString !== undefined ? options.useLayoutTplString : config.swigPagelet.useLayoutTplString;
     // 模板在多级目录下时，不使用默认模板字符串
     if (/\//.test(name)) useTpl = false;
 
@@ -49,15 +49,15 @@ module.exports = {
       const source = `{% extends '${layout}' %}{% block content %}{% require $id='page/${normalName}' %}{% endblock %}`;
       const tplFn = this.app.swig.compile(source, { filename: fakePath });
 
-      this.body = tplFn(locals)
+      this.body = tplFn(locals);
     } else {
       const renderFile = this.app.swig.renderFile;
       const render = () => new Promise((resolve, reject) => {
-        let p = path.join(config.view.root[0], `page/${normalName}` + config.view.defaultExtension);
+        const p = path.join(config.view.root[0], `page/${normalName}` + config.view.defaultExtension);
         renderFile(p, locals, (err, content) => {
-          if (err) reject(err)
-          else resolve(content)
-        })
+          if (err) reject(err);
+          else resolve(content);
+        });
       });
       const content = yield render();
 

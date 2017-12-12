@@ -68,7 +68,6 @@ describe('test/view/pagelet.test.js', () => {
       .expect(200);
 
     const body = result.body;
-    const keys = Object.keys(body);
 
     assert(/<p>content not from template string.<\/p>/.test(body.html.layout));
   });
