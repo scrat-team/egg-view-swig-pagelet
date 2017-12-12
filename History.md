@@ -1,4 +1,9 @@
 
+2.1.0 / 2017-12-12
+==================
+
+  * feat:support rendering template files wrote by user themselves. (#6)
+
 2.0.1 / 2017-08-13
 ==================
 
