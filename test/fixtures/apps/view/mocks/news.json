@@ -1,0 +1,14 @@
+{
+  "newsInfo": {
+    "title": "news title",
+    "categoryName": "Sport",
+    "createTime": "2017.12.10",
+    "from": "CNN",
+    "content": "news content, news content,news content,news content,news content,",
+    "newsId": "003112"
+  },
+  "socialInfo": {
+    "likeCount": "3000",
+    "shareCount": "5000"
+  }
+}

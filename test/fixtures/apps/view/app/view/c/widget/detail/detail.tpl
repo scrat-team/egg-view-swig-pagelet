@@ -6,7 +6,7 @@
       <span class="sort">{{newsInfo.categoryName}}</span>
       <span class="time">{{newsInfo.createTime }}</span>
       {% if newsInfo.from %}
-        <span class="from">来自{{newsInfo.from}}</span>
+        <span class="from">来自: {{newsInfo.from}}</span>
       {% endif %}
     </div>
 

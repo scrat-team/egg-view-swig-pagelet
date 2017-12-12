@@ -48,6 +48,7 @@ describe('test/view/pagelet.test.js', () => {
       )
     );
     assert(/<div class="name">ID:/.test(body.html.layout));
+    assert(!/<p>content not from template string.<\/p>/.test(body.html.layout));
     assert(/helper:###test/.test(body.html.layout));
     assert.deepEqual(body.css, [
       '/public/c/widget/card/card.css',
@@ -56,6 +57,45 @@ describe('test/view/pagelet.test.js', () => {
     assert.deepEqual(body.js, [
       '/public/c/widget/boot/boot.js',
       '/public/c/widget/list/list.js',
+    ]);
+  });
+
+  it('should render view/page/list.tpl file with pagelet json', function* () {
+    const result = yield app
+      .httpRequest()
+      .get('/render?_pagelets=layout&useTpl=0')
+      .expect('Content-Type', /application\/json/)
+      .expect(200);
+
+    const body = result.body;
+    const keys = Object.keys(body);
+
+    assert(/<p>content not from template string.<\/p>/.test(body.html.layout));
+  });
+
+  it('should request render datalet with pagelet json', function* () {
+    const result = yield app
+      .httpRequest()
+      .get('/renderDetail?_pagelets=datalet.detail')
+      .expect('Content-Type', /application\/json/)
+      .expect(200);
+
+    const body = result.body;
+    const keys = Object.keys(body);
+    // console.log(body)
+
+    assert(
+      [ 'html', 'css', 'js', 'script', 'data', 'title', 'hash' ].every(key =>
+        keys.includes(key)
+      )
+    );
+    assert(/<span class="from">来自: CNN/.test(body.html['datalet.detail']));
+    assert.deepEqual(body.css, [
+      '/public/c/widget/detail/detail.css',
+    ]);
+    assert.deepEqual(body.js, [
+      '/public/c/widget/boot/boot.js',
+      '/public/c/widget/detail/detail.js',
     ]);
   });
 });
