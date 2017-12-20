@@ -1,6 +1,6 @@
 {
   "name": "egg-view-swig-pagelet",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "基于egg-view-swig插件扩展, 支持scrat pagelet 模式",
   "eggPlugin": {
     "name": "swigPagelet",

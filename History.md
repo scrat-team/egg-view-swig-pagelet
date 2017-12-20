@@ -1,4 +1,9 @@
 
+2.1.2 / 2017-12-20
+==================
+
+  * fix: add `autoExtendLayout` config and set with `true` for forward compatible. (#7)
+
 2.1.1 / 2017-12-12
 ==================
 
