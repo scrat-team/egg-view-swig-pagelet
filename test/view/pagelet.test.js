@@ -72,6 +72,18 @@ describe('test/view/pagelet.test.js', () => {
     assert(/<p>content not from template string.<\/p>/.test(body.html.layout));
   });
 
+  it('should render component/page/list.tpl file with pagelet json', function* () {
+    const result = yield app
+      .httpRequest()
+      .get('/render?_pagelets=layout&useTpl=1')
+      .expect('Content-Type', /application\/json/)
+      .expect(200);
+
+    const body = result.body;
+
+    assert(/<p>content from component\/widget\/list\.tpl<\/p>/.test(body.html.layout));
+  });
+
   it('should request render datalet with pagelet json', function* () {
     const result = yield app
       .httpRequest()

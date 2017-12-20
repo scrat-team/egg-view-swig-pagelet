@@ -13,6 +13,7 @@
 </div>
 {% endif %}
 
+<p>content from component/widget/list.tpl</p>
 
 {% script %}
   require('component/widget/list/list.js');
