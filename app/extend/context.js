@@ -31,17 +31,16 @@ module.exports = {
     const normalName = name.replace(new RegExp(`${config.view.defaultExtension}$`, ''), '');
 
     /**
+    自动扩展layout模板
     view/page/ 目录下默认可以省略模板文件，默认模板字符串：
     {% extends 'layout/layout.tpl' %}
     {% block content %}
     {% require $id = 'page/[name]' %}
     {% endblock %}
     */
-    let useTpl = options.useLayoutTplString !== undefined ? options.useLayoutTplString : config.swigPagelet.useLayoutTplString;
-    // 模板在多级目录下时，不使用默认模板字符串
-    if (/\//.test(name)) useTpl = false;
+    const autoExt = options.autoExtendLayout !== undefined ? options.autoExtendLayout : config.swigPagelet.autoExtendLayout;
 
-    if (useTpl) {
+    if (autoExt) {
       const fakePath = path.join(
         config.view.root[0],
         normalName.replace(/\//g, '_') + config.view.defaultExtension
@@ -51,6 +50,7 @@ module.exports = {
 
       this.body = tplFn(locals);
     } else {
+      // 在不自动扩展layout模板的情况下，render的模板必须放到view/page/ 目录下！
       const renderFile = this.app.swig.renderFile;
       const render = () => new Promise((resolve, reject) => {
         const p = path.join(config.view.root[0], `page/${normalName}` + config.view.defaultExtension);
