@@ -1,4 +1,9 @@
 
+2.1.3 / 2017-12-26
+==================
+
+  * feat: expose the `scrat-swig` module by `app.pageletEngine` object. (#8)
+
 2.1.2 / 2017-12-20
 ==================
 
