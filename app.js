@@ -22,4 +22,6 @@ module.exports = app => {
       app.swig.setFilter(name, filters[name]);
     }
   }
+
+  app.pageletEngine = scratSwig;
 };
