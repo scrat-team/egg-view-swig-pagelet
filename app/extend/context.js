@@ -10,7 +10,7 @@ module.exports = {
    * @param {Object} [locals] template data
    * @param {Object} options custom params
    */
-  * render(name, locals, options = {}) {
+  async render(name, locals, options = {}) {
     const config = this.app.config || {};
 
     const pagelets = this.get('X-Pagelets') || this.query._pagelets;
@@ -59,7 +59,7 @@ module.exports = {
           else resolve(content);
         });
       });
-      const content = yield render();
+      const content = await render();
 
       this.body = content;
     }
