@@ -39,10 +39,10 @@
     "index.js"
   ],
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "ci": {
-    "version": "6, 7"
+    "version": "8"
   },
   "scripts": {
     "test": "npm run lint -- --fix && npm run test-local",
